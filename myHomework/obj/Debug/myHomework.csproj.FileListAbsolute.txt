@@ -1,0 +1,10 @@
+C:\Users\Xenia\source\repos\myHomework\myHomework\bin\Debug\myHomework.exe.config
+C:\Users\Xenia\source\repos\myHomework\myHomework\bin\Debug\myHomework.exe
+C:\Users\Xenia\source\repos\myHomework\myHomework\bin\Debug\myHomework.pdb
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.csprojAssemblyReference.cache
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.Properties.Resources.resources
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.csproj.GenerateResource.cache
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.csproj.CoreCompileInputs.cache
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.exe
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.pdb
+C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.Homework.resources
