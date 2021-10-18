@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics; 
+
+using static System.Math;
 
 /*
  * Составить алгоритм и программу вычисления таблицы значений функции f(x) из задачи 1.1 для N значений аргумента X, равномерно распределенных на отрезке [A, B]. 
- * Для проверки программы задать N=10; A=0,55; B=1
+ * Для проверки программы задать \N=10; A=0,55; B=1
  */
 
 namespace myHomework
@@ -15,26 +18,42 @@ namespace myHomework
     {
 		double ypoint(double x)
 		{
-			double y = abs(sin(sqrt(10.5 * x))) / (pow(x, 2.0 / 3) - 0.143) + 2 * x * 3.14;
+			double y = Math.Abs(Math.Sign(Math.Sqrt(10.5 * x))) / (Math.Pow(x, 2.0 / 3) - 0.143) + 2 * x * 3.14;
 			return y;
 		}
 		int main()
 		{
 			double A, B, h, y, x;
 			int N;
-			std::cout << "\n Vvedite nachalo otrezka A: ";
-			std::cin >> A;
-			std::cout << "\n Vvedite konec otrezka B: ";
-			std::cin >> B;
+
+			try 
+			{
+				Console.WriteLine("\nВвести точку начала отрезка");
+				A = Console.Read();
+				Console.WriteLine("\nВвести точку конца отрезка");
+				B = Console.Read();
+			}
+			catch (System.IO.IOException e)
+            {
+				Console.WriteLine("\nВведены некорректные данные", e);
+				Exception.StackTrace(e);
+            }
+
 			if (A >= B)
 			{
-				std::cout << "\n Vvedennie chisla ne udovletvoryaut usloviu A <= B \n";
+				Console.WriteLine("\n Vvedennie chisla ne udovletvoryaut usloviu A <= B \n");
 			}
 			else
 			{
-				std::cout << "\n Vvedite kolichestvo vichislenii N = ";
-				std::cin >> N;
-				h = (B - A) / (N - 1);
+				Console.WriteLine("\n Vvedite kolichestvo vichislenii N = ");
+				try
+				{
+					N = Console.Read();
+				} catch (System.IO.IOException e) 
+				{
+					Console.WriteLine("\nВведены некорректные данные", e);
+				}
+					h = (B - A) / (N - 1);
 				x = A;
 
 				for (int i = 0; i < N; i++)

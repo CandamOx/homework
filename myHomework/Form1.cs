@@ -25,7 +25,7 @@ namespace myHomework
 
         private void enter_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
