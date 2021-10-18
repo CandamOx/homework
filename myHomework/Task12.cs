@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics; 
+using System.Diagnostics;
 
 using static System.Math;
 
@@ -14,58 +14,53 @@ using static System.Math;
 
 namespace myHomework
 {
-    class Task12
+    public class Task12
     {
-		double ypoint(double x)
+        private double Ypoint(double x)
 		{
-			double y = Math.Abs(Math.Sign(Math.Sqrt(10.5 * x))) / (Math.Pow(x, 2.0 / 3) - 0.143) + 2 * x * 3.14;
+			double y = Math.Abs(
+				Math.Sign(
+					Math.Sqrt(10.5 * x))) 
+				/ (Math.Pow(x, 2.0 / 3) - 0.143) 
+				+ 2 * x * 3.14;
 			return y;
 		}
-		int main()
+		public int Main()
 		{
-			double A, B, h, y, x;
-			int N;
-
 			try 
 			{
 				Console.WriteLine("\nВвести точку начала отрезка");
-				A = Console.Read();
+				double A = Console.Read();
 				Console.WriteLine("\nВвести точку конца отрезка");
-				B = Console.Read();
+				double B = Console.Read();
+				if (A >= B)
+				{
+					Console.WriteLine("\n Введённые числа не удовлетворяют условию. A <= B \n");
+				}
+				else
+				{
+					Console.WriteLine("\n Введите количество вычислений N = ");
+					int N = Console.Read();					
+					double h = (B - A) / (N - 1);
+					double x = A;
+
+					for (int i = 0; i < N; i++)
+					{
+						double y = Ypoint(x);
+						Console.WriteLine("x = ", x, " \t y = ", y);
+						x += h;
+					}
+				}
+
+				return 0;
 			}
 			catch (System.IO.IOException e)
-            {
-				Console.WriteLine("\nВведены некорректные данные", e);
-				Exception.StackTrace(e);
-            }
-
-			if (A >= B)
 			{
-				Console.WriteLine("\n Vvedennie chisla ne udovletvoryaut usloviu A <= B \n");
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
 			}
-			else
-			{
-				Console.WriteLine("\n Vvedite kolichestvo vichislenii N = ");
-				try
-				{
-					N = Console.Read();
-				} catch (System.IO.IOException e) 
-				{
-					Console.WriteLine("\nВведены некорректные данные", e);
-				}
-					h = (B - A) / (N - 1);
-				x = A;
-
-				for (int i = 0; i < N; i++)
-				{
-					double y = ypoint(x);
-					std::cout.precision(2);
-					std::cout << "x = " << std::fixed << x << " \t" << "y = " << std::fixed << y << std::endl;
-					x += h;
-				}
-			}
-
-			return 0;
 		}
 
 	}

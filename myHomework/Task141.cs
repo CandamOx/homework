@@ -6,34 +6,44 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task141
+    public class Task141
     {
-		double compE(double E, double a)
+		double CompE(double E, double a)
 		{
 			E = E * a;
 			return E;
 		}
 
-		int main()
+		public int Main()
 		{
-			double E = 1.0;
-			int n;
-			std::cout << "Vvedite razmer massiva n: \n";
-			std::cin >> n;
-			std::vector<double> a(n +1);
+			try {
+				double E = 1.0;
 
-			std::cout << "\n Vvedite vse elementi massiva: ";
-			for (int i = 1; i <= n; i++)
-			{
-				std::cin >> a[i];
-				if (i == 1 || i % 3 == 0)
-					E = compE(E, a[i]);
+				Console.WriteLine("Введите размер массива n: \n");
+				int n = Console.Read();
+				std::vector<double> a(n +1);
+
+				Console.WriteLine("\n Введите все элементы массива: ");
+				for (int i = 1; i <= n; i++)
+				{
+					a[i] = Console.Read();
+					i == 1 || i % 3 == 0 ? E = CompE(E, a[i]) : ;
+				
+
+				std::cout.precision(2);
+				std::cout << "Proizvedenie: " << std::fixed << E;
+
+				return 0;
 			}
-
-			std::cout.precision(2);
-			std::cout << "Proizvedenie: " << std::fixed << E;
-			return 0;
+			catch(System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
 		}
+
 
 	}
 }
