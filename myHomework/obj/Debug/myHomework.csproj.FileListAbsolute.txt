@@ -8,3 +8,10 @@ C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.csproj.Co
 C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.exe
 C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.pdb
 C:\Users\Xenia\source\repos\myHomework\myHomework\obj\Debug\myHomework.Homework.resources
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.csproj.AssemblyReference.cache
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.Homework.resources
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.Properties.Resources.resources
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.csproj.GenerateResource.cache
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.csproj.CoreCompileInputs.cache
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.exe
+C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.pdb
