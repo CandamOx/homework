@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using namespace IOException;
 namespace myHomework
 {
     public class Task141
     {
 		double CompE(double E, double a)
 		{
-			E = E * a;
-			return E;
+			return E * a;
 		}
 
 		public int Main()
@@ -19,9 +19,9 @@ namespace myHomework
 			try {
 				double E = 1.0;
 
-				Console.WriteLine("Введите размер массива n: \n");
+				Console.WriteLine("Введите размер массива n: ");
 				int n = Console.Read();
-				std::vector<double> a(n +1);
+				double[] a = new double[n +1];
 
 				Console.WriteLine("\n Введите все элементы массива: ");
 				for (int i = 1; i <= n; i++)
@@ -29,13 +29,11 @@ namespace myHomework
 					a[i] = Console.Read();
 					i == 1 || i % 3 == 0 ? E = CompE(E, a[i]) : ;
 				
-
-				std::cout.precision(2);
-				std::cout << "Proizvedenie: " << std::fixed << E;
-
+					Console.WriteLine("Произведение: ", E);
+				}
 				return 0;
 			}
-			catch(System.IO.IOException e)
+			catch(IOException e)
 			{
 				Console.WriteLine("\n Введены неверные параметры, операция прервана");
 				if (e.Source != null)
