@@ -4,45 +4,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using static System.Math;
 // Составить циклический алгоритм и программу для вычисления результата по формуле. 
 // Для проверки программы задать X=0.5; n = 20.
 
 namespace myHomework
 {
-    class Task132
+    public class Task132
     {
-        double yfunc(double x, int k, double e)
+        private double Yfunc(double x, int k, double e)
         {
-            double y = (pow(abs(x - k), 2) * sqrt(pow(e, k - 1))) / log(2 + pow(x, k) + pow(x, 2 * k + 1));
-            return y;
+            return 
+                (   Math.Pow
+                (   Math.Abs(x - k), 2)
+                *   Math.Sqrt
+                (   Math.Pow(e, k - 1)))
+                /   Math.Log(2 
+                +   Math.Pow(x, k)
+                +   Math.Pow(x, 2 * k + 1));
         }
 
-        int main()
+        public int Main()
         {
-            double a, x, y, s, e;
-            int n, k;
-
-            std::cout << "\n Vvedite x: ";
-            std::cin >> x;
-            std::cout << "\n Vvedite n: ";
-            std::cin >> n;
-
-            e = exp(1.0);
-            s = 0;
-            a = pow(e, sqrt(x / n));
-
-            for (k = 1; k <= n; k++)
+            try
             {
-                y = yfunc(x, k, e);
-                s += y;
-                std::cout.precision(2);
-                std::cout << std::fixed << y << " \t" << std::fixed << s << "\n";
+                Console.WriteLine("\n Введите x: ");
+                double x = Console.Read();
+                Console.WriteLine("\n Введите n: ");
+                int n = Console.Read();
+
+                double e = Math.Exp(1.0);
+                double s = 0;
+                double a = Math.Pow(e, Math.Sqrt(x / n));
+
+                for (int k = 1; k <= n; k++)
+                {
+                    double y = Yfunc(x, k, e);
+                    s += y;
+                    Console.WriteLine("\n", y, " \t", s);
+                }
+
+                Console.WriteLine("\n", s, " * ", a, " = ", s * a);
+
+                return 0;
+            } 
+            catch(System.IO.IOException e)
+            {
+                Console.WriteLine("\n Введены неверные параметры, операция прервана");
+                if (e.Source != null)
+                    Console.WriteLine("IOException source: {0}", e.Source);
+                throw;
             }
-
-            std::cout.precision(2);
-            std::cout << "\n" << std::fixed << s << " * " << a << " = " << std::fixed << s * a;
-
-            return 0;
         }
 
     }
