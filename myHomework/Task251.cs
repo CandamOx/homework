@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task251
+    public class Task251
     {
 		const int n = 6;
 		const int m = 3;
@@ -20,7 +20,7 @@ namespace myHomework
 			return t;
 		}
 
-		int main()
+		public int Main()
 		{
 			double A[n][m];
 			int i, j, k = 0, t;

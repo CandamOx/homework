@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task16
+    public class Task16
     {
+        public int Main()
+        {
+            return 0;
+        }
     }
 }

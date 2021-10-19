@@ -6,40 +6,52 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task142
+    public class Task142
     {
-		int main()
+		public int Main()
 		{
-			int A, n, i, k = 0, sum = 0;
-
-			std::cout << "Vvedite chislo A: \n";
-			std::cin >> A;
-
-			std::cout << "\n Vvedite kolichestvo elementov massiva N: \n";
-			std::cin >> n;
-
-			std::vector<int> X(n);
-			std::vector<int> Y(n);
-			std::vector<int> Z(n);
-
-			std::cout << "\n Napolnite massivi chislami \n";
-			for (i = 0; i < n; i++)
+			try
 			{
-				std::cout << "Vvedite element massiva X: ";
-				std::cin >> X[i];
-				std::cout << "\n Vvedite element massiva Y: ";
-				std::cin >> Y[i];
+				int k = 0, sum = 0;
 
-				Z[i] = X[i] * Y[i];
-				if (Z[i] <= A)
+				Console.WriteLine("Введите число A: \n");
+				int A = Console.Read();
+
+				Console.WriteLine("\n Введите количество элементов массива N: \n");
+				int n = Console.Read();
+
+				int[] X = new int[n];
+				int[] Y = new int[n];
+				int[] Z = new int[n];
+
+				Console.WriteLine("\n Наполните массив числами \n");
+				for (int i = 0; i < n; i++)
 				{
-					sum += Z[i];
-					k++;
-				}
-				std::cout << X[i] << " * " << Y[i] << " = " << Z[i] << "\n";
-			}
+					Console.WriteLine("Введите элемент массива X: ");
+					X[i] = Console.Read();
+					Console.WriteLine("\n Введите элемент массива Y: ");
+					Y[i] = Console.Read();
 
-			std::cout << "\n Kolichestvo par = " << k << "\n Summa proizvedenii = " << sum;
+					Z[i] = X[i] * Y[i];
+					if (Z[i] <= A)
+					{
+						sum += Z[i];
+						k++;
+					}
+					Console.WriteLine("\n", X[i], " * ", Y[i], " = ", Z[i]);
+				}
+
+				Console.WriteLine("\n Количество пар = ", k, "\n Сумма произведений = ", sum);
+
+				return 0;
+			}
+			catch (System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
 		}
 	}
 }

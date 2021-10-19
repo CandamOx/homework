@@ -15,3 +15,10 @@ C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.csproj.Gen
 C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.csproj.CoreCompileInputs.cache
 C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.exe
 C:\Users\rhdeer\Source\Repos\homework\myHomework\obj\Debug\myHomework.pdb
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.csprojAssemblyReference.cache
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.Homework.resources
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.Properties.Resources.resources
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.csproj.GenerateResource.cache
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.csproj.CoreCompileInputs.cache
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.exe
+C:\Users\Xenia\Documents\GitHub\homework\myHomework\obj\Debug\myHomework.pdb
