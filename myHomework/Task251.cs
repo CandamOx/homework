@@ -11,61 +11,48 @@ namespace myHomework
 		const int n = 6;
 		const int m = 3;
 
-		int t_count(int t, double a)
+		private int t_count(int t, double a)
 		{
-			if (a == 0)
-			{
-				t++;
-			}
+			if (a == 0) t++;
 			return t;
 		}
 
 		public int Main()
 		{
-			double A[n][m];
+			double[,] A = new double[n, m];
 			int i, j, k = 0, t;
-			std::cout << "Vvedite elementi matrici A: \n";
+			Console.WriteLine("Vvedite elementi matrici A: \n");
 			for (i = 0; i < n; i++)
 			{
 				for (j = 0; j < m; j++)
 				{
-					std::cin >> A[i][j];
+					A[i, j] = Console.Read();
 				}
 			}
 
-			std::cout << "\n Matrica: \n";
+			Console.WriteLine("\n Matrica: \n");
 			for (i = 0; i < n; i++)
-			{
-				for (j = 0; j < m; j++)
-				{
-					std::cout << A[i][j] << " ";
-				}
-				std::cout << "\n";
-			}
+				for (j = 0; j < m; j++)				
+					Console.WriteLine(" ", A[i, j]);
 
-			std::cout << "\n Nomera strok, imeushih ne menee 2 nulevih elementov: \n";
+			Console.WriteLine("\n Nomera strok, imeushih ne menee 2 nulevih elementov: \n");
 			for (i = 0; i < n; i++)
 			{
 				t = 0;
 				for (j = 0; j < m; j++)
 				{
-					t = t_count(t, A[i][j]);
+					t = t_count(t, A[i, j]);
 				}
 				if (t >= 2)
 				{
-					std::cout << i + 1 << " ";
+					Console.WriteLine(" ", i + 1);
 					k++;
 				}
 			}
 
-			if (k == 0)
-			{
-				std::cout << "\n Podhodyashih strok net \n";
-			}
-			else
-			{
-				std::cout << "\n Kolichestvo podhodyashih strok: " << k;
-			}
+			if (k == 0) Console.WriteLine("\n Podhodyashih strok net \n");
+			else Console.WriteLine("\n Kolichestvo podhodyashih strok: ", k);
+			
 
 			return 0;
 		}

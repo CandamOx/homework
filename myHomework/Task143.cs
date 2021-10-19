@@ -8,7 +8,7 @@ namespace myHomework
 {
     public class Task143
     {
-		double minn(double ai, double ani)
+		private double minn(double ai, double ani)
 		{
 			double min = Math.Abs(ai) - Math.Abs(ani);
 			return min;

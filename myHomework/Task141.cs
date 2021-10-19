@@ -8,7 +8,7 @@ namespace myHomework
 {
     public class Task141
     {
-		double CompE(double E, double a)
+		private double CompE(double E, double a)
 		{
 			return E * a;
 		}
