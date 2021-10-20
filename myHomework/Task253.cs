@@ -8,9 +8,8 @@ namespace myHomework
 {
     class Task253
     {
-        using namespace std;
 
-float** vvod(int n)
+	float** vvod(int n)
 	{
 		int i, j;
 		float** a = new float*[n];
@@ -63,26 +62,37 @@ float** vvod(int n)
 				a[i][j] = a[i][j] / mx; ;
 	}
 
-	int main()
+	public int Main()
 	{
-		const int n = 5;
-		float** a;
-
-		setlocale(LC_ALL, "Russian");
-
-		a = vvod(n);
-		vivod(a, n, "Исходная матрица:");
-		if (оtr(a, n))
+		try
 		{
-			del(a, n);
-			cout << " Максимальное по модулю = " << max(a, n) << endl;
-			vivod(a, n, "Матрица после деления на максимальное значение по модулю:");
-		}
-		else
-			cout << "Не все значения главной диагонали отрицательны \n";
+			const int n = 5;
+			float** a;
 
-		system("pause");
-		return 0;
+			setlocale(LC_ALL, "Russian");
+
+			a = vvod(n);
+			vivod(a, n, "Исходная матрица:");
+			if (оtr(a, n))
+			{
+				del(a, n);
+				cout << " Максимальное по модулю = " << max(a, n) << endl;
+				vivod(a, n, "Матрица после деления на максимальное значение по модулю:");
+			}
+			else
+				cout << "Не все значения главной диагонали отрицательны \n";
+
+			system("pause");
+
+			return 0;
+		}
+		catch (System.IO.IOException e)
+		{
+			Console.WriteLine("\n Введены неверные параметры, операция прервана");
+			if (e.Source != null)
+				Console.WriteLine("IOException source: {0}", e.Source);
+			throw;
+		}
 	}
 
 	}
