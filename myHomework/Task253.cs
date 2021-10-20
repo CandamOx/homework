@@ -69,8 +69,6 @@ namespace myHomework
 			const int n = 5;
 			float** a;
 
-			setlocale(LC_ALL, "Russian");
-
 			a = vvod(n);
 			vivod(a, n, "Исходная матрица:");
 			if (оtr(a, n))

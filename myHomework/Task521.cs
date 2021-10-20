@@ -51,24 +51,33 @@ class Student
 
 	int main()
 	{
-		setlocale(LC_ALL, "Russian");
-		const int kolichestvo_student = 5;
-		Student Info[kolichestvo_student];
-
-		for (int i = 0; i < kolichestvo_student; i++)
+		try
 		{
-			Info[i].input();
-		}
+			const int kolichestvo_student = 5;
+			Student Info[kolichestvo_student];
 
-		for (int i = 0; i < kolichestvo_student; i++)
-		{
-			if (Info[i].check())
+			for (int i = 0; i < kolichestvo_student; i++)
 			{
-				Info[i].output();
+				Info[i].input();
 			}
-		}
 
-		return 0;
+			for (int i = 0; i < kolichestvo_student; i++)
+			{
+				if (Info[i].check())
+				{
+					Info[i].output();
+				}
+			}
+
+			return 0;
+		}
+		catch (System.IO.IOException e)
+		{
+			Console.WriteLine("\n Введены неверные параметры, операция прервана");
+			if (e.Source != null)
+				Console.WriteLine("IOException source: {0}", e.Source);
+			throw;
+		}
 	}
 
 	}

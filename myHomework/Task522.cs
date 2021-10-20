@@ -28,7 +28,7 @@ namespace myHomework
 	class table
 	{
 		public:
-	him* t;
+		him* t;
 		int n;
 
 		table(char name[])
@@ -86,13 +86,21 @@ namespace myHomework
 
 	int main()
 	{
-		setlocale(LC_ALL, "RUSSIAN");
-		table tab("input.txt");
-		tab.print();
-		tab.find();
-		system("pause");
-		return 0;
-	}
+			try
+			{
+				table tab("input.txt");
+				tab.print();
+				tab.find();
+				return 0;
+			}
+			catch (System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
+		}
 
 	}
 }

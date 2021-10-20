@@ -89,16 +89,24 @@ public:
 
         int main()
         {
-            setlocale(LC_ALL, "Russian");
+            try { 
+                Matrix test;
 
-            Matrix test;
+                test.input();
+                test.output_source();
+                test.sort();
+                test.output_sort();
+                test.output_final();
+                return 0;
+            }
+            catch (System.IO.IOException e)
+            {
+                Console.WriteLine("\n Введены неверные параметры, операция прервана");
+                if (e.Source != null)
+                    Console.WriteLine("IOException source: {0}", e.Source);
+                throw;
+            }
 
-            test.input();
-            test.output_source();
-            test.sort();
-            test.output_sort();
-            test.output_final();
-            return 0;
         }
 
     }
