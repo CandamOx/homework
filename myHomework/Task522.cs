@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task522
+    public class Task522
     {
 
-		class him
+		public class Him
 		{
-			public char nazv[50];
+			public Char[] nazv = new Char[50];
 			public int ves;
-			public char prov[30];
+			public Char[] prov = new Char[30];
 			public float k;
 
-		bool polu()
+		public bool Polu()
 		{
 			if (strcmp(prov, "полупроводник") == 0)
 				if (k > 5)

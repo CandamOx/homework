@@ -6,97 +6,92 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task433
+    public class Task433
     {
         const int N = 9;
         const int M = 4;
 
         class Matrix
         {
-            private:
-    int i, j, k, x, n, flag = 0;
-            int a[N][M];
+            public int i, j, k, x, n, flag = 0;
+            public int[,] a = new int[N, M];
 
-public:
-    void input()
+            public void Input()
             {
-                cout << "Введите матрицу:";
+                Console.WriteLine("Введите матрицу:");
                 for (i = 0; i < N; i++)
                 {
                     for (j = 0; j < M; j++)
-                        cin >> a[i][j];
+                        a[i, j] = Console.Read();
                 }
             }
 
-            void output_source()
+            public void Output_source()
             {
-                cout << "\nИсходная матрица:\n";
+                Console.WriteLine("\nИсходная матрица:\n");
                 for (i = 0; i < N; i++)
                 {
                     for (j = 0; j < M; j++)
-                        cout << a[i][j] << "\t";
-                    cout << "\n";
+                        Console.Write("\t", a[i, j]);
+                    Console.WriteLine();
                 }
             }
 
-            void sort()
+            public void Sort()
             {
                 for (j = 0; j < M; j++)
                     for (i = 0; i < N; i++)
-                        if (a[i][j] < 0)
+                        if (a[i, j] < 0)
                             for (k = N - 1; k > i; k--)
-                                if (a[k][j] >= 0)
+                                if (a[k, j] >= 0)
                                 {
-                                    x = a[i][j];
-                                    a[i][j] = a[k][j];
-                                    a[k][j] = x;
+                                    x = a[i, j];
+                                    a[i, j] = a[k, j];
+                                    a[k, j] = x;
                                 }
             }
 
-            void output_sort()
+            public void Output_sort()
             {
-                cout << "\nОтсортированная матрица:\n";
+                Console.WriteLine("\nОтсортированная матрица:\n");
                 for (i = 0; i < N; i++)
                 {
                     for (j = 0; j < M; j++)
-                        cout << a[i][j] << "\t";
-                    cout << "\n";
+                        Console.Write("\t", a[i, j]);
+                    Console.WriteLine();
                 }
             }
 
-            void output_final()
+            public void Output_final()
             {
                 for (i = 0; i < N; i++)
                 {
                     for (j = 0; j < M; j++)
-                    {
-                        if (a[i][j] < 0)
-                            flag = 1;
-                    }
+                        if (a[i, j] < 0) flag = 1;
                     if (flag == 1) break;
                 }
 
                 n = i;
-                cout << "\nМатрица без строк с отрицательными элементами:\n";
+                Console.WriteLine("\nМатрица без строк с отрицательными элементами:\n");
                 for (i = 0; i < n; i++)
                 {
                     for (j = 0; j < M; j++)
-                        cout << a[i][j] << "\t";
-                    cout << "\n";
+                        Console.Write("\t", a[i, j]);
+                    Console.WriteLine();
                 }
             }
         };
 
-        int main()
+        public int Main()
         {
             try { 
-                Matrix test;
+                Matrix test = new Matrix();
 
-                test.input();
-                test.output_source();
-                test.sort();
-                test.output_sort();
-                test.output_final();
+                test.Input();
+                test.Output_source();
+                test.Sort();
+                test.Output_sort();
+                test.Output_final();
                 return 0;
             }
             catch (System.IO.IOException e)
