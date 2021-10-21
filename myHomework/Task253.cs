@@ -74,13 +74,11 @@ namespace myHomework
 			if (оtr(a, n))
 			{
 				del(a, n);
-				cout << " Максимальное по модулю = " << max(a, n) << endl;
+					Console.WriteLine(" Максимальное по модулю = ", max(a, n));
 				vivod(a, n, "Матрица после деления на максимальное значение по модулю:");
 			}
 			else
-				cout << "Не все значения главной диагонали отрицательны \n";
-
-			system("pause");
+					Console.WriteLine("Не все значения главной диагонали отрицательны \n");
 
 			return 0;
 		}
