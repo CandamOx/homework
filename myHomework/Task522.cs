@@ -84,7 +84,7 @@ namespace myHomework
 
 	};
 
-	int main()
+	public int Main()
 	{
 			try
 			{
