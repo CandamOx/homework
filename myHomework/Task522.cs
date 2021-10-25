@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task522
+    public class Task522
     {
 
-		class him
+		public class Him
 		{
-			public char nazv[50];
+			public Char[] nazv = new Char[50];
 			public int ves;
-			public char prov[30];
+			public Char[] prov = new Char[30];
 			public float k;
 
-		bool polu()
+		public bool Polu()
 		{
 			if (strcmp(prov, "полупроводник") == 0)
 				if (k > 5)
@@ -28,7 +28,7 @@ namespace myHomework
 	class table
 	{
 		public:
-	him* t;
+		him* t;
 		int n;
 
 		table(char name[])
@@ -84,15 +84,23 @@ namespace myHomework
 
 	};
 
-	int main()
+	public int Main()
 	{
-		setlocale(LC_ALL, "RUSSIAN");
-		table tab("input.txt");
-		tab.print();
-		tab.find();
-		system("pause");
-		return 0;
-	}
+			try
+			{
+				table tab("input.txt");
+				tab.print();
+				tab.find();
+				return 0;
+			}
+			catch (System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
+		}
 
 	}
 }

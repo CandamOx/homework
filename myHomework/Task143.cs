@@ -6,43 +6,51 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task143
+    public class Task143
     {
-		double minn(double ai, double ani)
+		private double minn(double ai, double ani)
 		{
-			double min = abs(ai) - abs(ani);
+			double min = Math.Abs(ai) - Math.Abs(ani);
 			return min;
 		}
 
-		int main()
+		public int Main()
 		{
-			double min;
-			int n, i;
-			std::cout << "Vvedite razmernost massiva A (chetnoe chislo): ";
-			std::cin >> n;
+			try
+			{				
+				Console.WriteLine("Vvedite razmernost massiva A (chetnoe chislo): ");
+				int n = Console.Read();
 
-			if (n % 2 != 0 || n <= 0)
-				std::cout << "\n Nepravilnii razmer massiva";
-			else
-			{
-				std::vector<double> A(n);
-				cout << "\n Vvedite elementi massiva A: \n";
-				for (i = 0; i < n; i++)
+				if (n % 2 != 0 || n <= 0)
+					Console.WriteLine("\n Nepravilnii razmer massiva");
+				else
 				{
-					std::cin >> A[i];
+					double[] A = new double[n];
+					Console.WriteLine("\n Vvedite elementi massiva A: \n");
+					for (int i = 0; i < n; i++)
+					{
+						A[i] = Console.Read();
+					}
+
+					double min = Math.Abs(A[0]) - Math.Abs(A[n - 1]);
+					for (int i = 1; i <= n / 2; i++)
+					{
+						if (Math.Abs(A[i]) - Math.Abs(A[n - i]) < min)
+							min = minn(A[i], A[n - i]);
+					}
+					Console.WriteLine("\n Naimenshaya raznost: ", min);
 				}
 
-				min = abs(A[0]) - abs(A[n - 1]);
-				for (i = 1; i <= n / 2; i++)
-				{
-					if (abs(A[i]) - abs(A[n - i]) < min)
-						min = minn(A[i], A[n - i]);
-				}
-				std::cout << "\n Naimenshaya raznost: " << min;
+				return 0;
 			}
-
-			return 0;
-		}
+			catch (System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
+}
 
 	}
 }

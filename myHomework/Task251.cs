@@ -6,68 +6,65 @@ using System.Threading.Tasks;
 
 namespace myHomework
 {
-    class Task251
+    public class Task251
     {
 		const int n = 6;
 		const int m = 3;
 
-		int t_count(int t, double a)
+		private int t_count(int t, double a)
 		{
-			if (a == 0)
-			{
-				t++;
-			}
+			if (a == 0) t++;
 			return t;
 		}
 
-		int main()
+		public int Main()
 		{
-			double A[n][m];
-			int i, j, k = 0, t;
-			std::cout << "Vvedite elementi matrici A: \n";
-			for (i = 0; i < n; i++)
+			try
 			{
-				for (j = 0; j < m; j++)
+				double[,] A = new double[n, m];
+				int i, j, k = 0, t;
+				Console.WriteLine("Vvedite elementi matrici A: \n");
+				for (i = 0; i < n; i++)
 				{
-					std::cin >> A[i][j];
+					for (j = 0; j < m; j++)
+					{
+						A[i, j] = Console.Read();
+					}
 				}
-			}
 
-			std::cout << "\n Matrica: \n";
-			for (i = 0; i < n; i++)
-			{
-				for (j = 0; j < m; j++)
+				Console.WriteLine("\n Matrica: \n");
+				for (i = 0; i < n; i++)
+					for (j = 0; j < m; j++)
+						Console.WriteLine(" ", A[i, j]);
+
+				Console.WriteLine("\n Nomera strok, imeushih ne menee 2 nulevih elementov: \n");
+				for (i = 0; i < n; i++)
 				{
-					std::cout << A[i][j] << " ";
+					t = 0;
+					for (j = 0; j < m; j++)
+					{
+						t = t_count(t, A[i, j]);
+					}
+					if (t >= 2)
+					{
+						Console.WriteLine(" ", i + 1);
+						k++;
+					}
 				}
-				std::cout << "\n";
-			}
 
-			std::cout << "\n Nomera strok, imeushih ne menee 2 nulevih elementov: \n";
-			for (i = 0; i < n; i++)
-			{
-				t = 0;
-				for (j = 0; j < m; j++)
-				{
-					t = t_count(t, A[i][j]);
-				}
-				if (t >= 2)
-				{
-					std::cout << i + 1 << " ";
-					k++;
-				}
-			}
+				if (k == 0) Console.WriteLine("\n Podhodyashih strok net \n");
+				else Console.WriteLine("\n Kolichestvo podhodyashih strok: ", k);
 
-			if (k == 0)
-			{
-				std::cout << "\n Podhodyashih strok net \n";
-			}
-			else
-			{
-				std::cout << "\n Kolichestvo podhodyashih strok: " << k;
-			}
 
-			return 0;
+				return 0;
+			}
+			catch (System.IO.IOException e)
+			{
+				Console.WriteLine("\n Введены неверные параметры, операция прервана");
+				if (e.Source != null)
+					Console.WriteLine("IOException source: {0}", e.Source);
+				throw;
+			}
 		}
 
 	}
