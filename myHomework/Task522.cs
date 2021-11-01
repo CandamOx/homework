@@ -8,17 +8,17 @@ namespace myHomework
 {
     public class Task522
     {
-		// test 2 
+		
 		public class Him
 		{
 			public Char[] nazv = new Char[50];
-			public int ves; //
+			public int ves; 
 			public Char[] prov = new Char[30];
 			public float k; 
 			// test 2
 		public bool Polu()
 		{
-			if (strcmp(prov, "полупроводник") == 0)
+			if (string.Compare(prov, "полупроводник") == 0)
 				if (k > 5)
 					return true;
 			return false;
