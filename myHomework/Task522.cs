@@ -18,7 +18,7 @@ namespace myHomework
 
 		public bool Polu()
 		{
-			if (strcmp(prov, "полупроводник") == 0)
+			if (string.Compare(prov, "полупроводник") == 0)
 				if (k > 5)
 					return true;
 			return false;
