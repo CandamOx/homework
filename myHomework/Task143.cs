@@ -8,13 +8,13 @@ namespace myHomework
 {
     public class Task143
     {
-		private double minn(double ai, double ani)
+		private static double Minn(double ai, double ani)
 		{
 			double min = Math.Abs(ai) - Math.Abs(ani);
 			return min;
 		}
 
-		public int Main()
+		public static int Task()
 		{
 			try
 			{				
@@ -36,7 +36,7 @@ namespace myHomework
 					for (int i = 1; i <= n / 2; i++)
 					{
 						if (Math.Abs(A[i]) - Math.Abs(A[n - i]) < min)
-							min = minn(A[i], A[n - i]);
+							min = Minn(A[i], A[n - i]);
 					}
 					Console.WriteLine("\n Naimenshaya raznost: ", min);
 				}

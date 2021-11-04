@@ -12,7 +12,7 @@ namespace myHomework
 {
     public class Task132
     {
-        private double Yfunc(double x, int k, double e)
+        private static double Yfunc(double x, int k, double e)
         {
             return 
                 (   Math.Pow
@@ -24,7 +24,7 @@ namespace myHomework
                 +   Math.Pow(x, 2 * k + 1));
         }
 
-        public int Main()
+        public static int Task()
         {
             try
             {

@@ -9,7 +9,7 @@ namespace myHomework
     public class Task253
     {
 
-	float[,] vvod(int n)
+		static float[,] vvod(int n)
 	{
 		int i, j;
 		float[,] a = new float[n, n];
@@ -20,7 +20,7 @@ namespace myHomework
 		return a;
 	}
 
-	void vivod(float[,] a, int n, string s)
+		static void vivod(float[,] a, int n, string s)
 	{
 		int i, j;
 		Console.Write(s);
@@ -32,7 +32,7 @@ namespace myHomework
 		}
 	}
 
-	bool оtr(float[,] a, int n)
+		static bool оtr(float[,] a, int n)
 	{
 		for (int i = 0; i < n; i++)
 			if (a[i, i] > 0)
@@ -40,7 +40,7 @@ namespace myHomework
 		return true;
 	}
 
-	float max(float[,] a, int n)
+		static float max(float[,] a, int n)
 	{
 		float mx = a[0, 0];
 		for (int i = 0; i < n; i++)
@@ -49,7 +49,7 @@ namespace myHomework
 		return mx;
 	}
 
-	void del(float[,] a, int n)
+		static void del(float[,] a, int n)
 	{
 		float mx = max(a, n);
 		for (int i = 0; i < n; i++)
@@ -57,7 +57,7 @@ namespace myHomework
 				a[i, j] = a[i, j] / mx; ;
 	}
 
-	public int Main()
+	public static int Task()
 	{
 		try
 		{

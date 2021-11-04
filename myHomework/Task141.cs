@@ -8,12 +8,12 @@ namespace myHomework
 {
     public class Task141
     {
-		private double CompE(double E, double a)
+		private static double CompE(double E, double a)
 		{
 			return E * a;
 		}
 
-		public double Main()
+		public static double Task()
 		{
 			try {
 				double E = 1.0;

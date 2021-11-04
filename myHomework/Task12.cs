@@ -16,7 +16,7 @@ namespace myHomework
 {
     public class Task12
     {
-        private double Ypoint(double x)
+        private static double Ypoint(double x)
 		{
 			double y = Math.Abs(
 				Math.Sign(
@@ -25,7 +25,7 @@ namespace myHomework
 				+ 2 * x * 3.14;
 			return y;
 		}
-		public int Main()
+		public static int Task()
 		{
 			try 
 			{

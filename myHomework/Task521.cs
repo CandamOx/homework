@@ -45,7 +45,7 @@ namespace myHomework
 			}
 		};
 
-		public int Main()
+		public static int Task()
 		{
 			try
 			{

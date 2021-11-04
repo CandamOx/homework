@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace myHomework
 {
@@ -15,27 +16,26 @@ namespace myHomework
 			public int ves; 
 			public Char[] prov = new Char[30];
 			public float k; 
-			// test 2
-		public bool Polu()
-		{
-			if (string.Compare(prov, "полупроводник") == 0)
-				if (k > 5)
-					return true;
-			return false;
-		}
+			public bool Polu(int i)
+			{
+				if (string.Compare(Convert.ToString(prov[i]), "полупроводник") == 0)
+					if (k > 5)
+						return true;
+				return false;
+			}
 	};
 
-	class table
+	class Table
 	{
-		public Him* t;
+		public Him t;
 		public int n;
 
-		table(char name[])
+		Table(char name)
 		{
 			n = 0;
-			char temp[255];
-			fstream f, f2;
-			f.open(name);
+			char[] temp = new char[255];
+			FileStream f, f2;
+			f.Open(name);
 
 			if (f)
 			{
@@ -48,7 +48,7 @@ namespace myHomework
 				f.close();
 			}
 
-			t = new him[n];
+			Him[] tbl = new Him[n];
 			n = 0;
 
 			f2.open(name);
@@ -56,43 +56,43 @@ namespace myHomework
 			{
 				while (!f2.eof())
 				{
-					f2 >> t[n].nazv;
-					f2 >> t[n].ves;
-					f2 >> t[n].prov;
-					f2 >> t[n].k;
+					f2 >> tbl[n].nazv;
+					f2 >> tbl[n].ves;
+					f2 >> tbl[n].prov;
+					f2 >> tbl[n].k;
 					n++;
 				}
 				f2.close();
 			}
 		}
 
-		void print()
+		void Print()
 		{
-			cout << "Все данные из файла " << endl;
-			for (int i = 0; i < n; i++)
-				cout << t[i].nazv << "\t  Уд. вес: " << t[i].ves << "\t" << t[i].prov << "\t Кол-во: " << t[i].k << "\n";
-		};
+				Console.WriteLine("Все данные из файла ");
+				for (int i = 0; i < n; i++)
+					cout << tbl[i].nazv << "\t  Уд. вес: " << tbl[i].ves << "\t" << tbl[i].prov << "\t Кол-во: " << tbl[i].k << "\n";
+		}
 
-		void find()
+		void Find()
 		{
 			cout << "Полупроводники, которых более 5:" << endl;
 			for (int i = 0; i < n; i++)
 				if (t[i].polu())
-					cout << t[i].nazv << "\t Уд. вес: " << t[i].ves << "\n";
-		};
+					cout << tbl[i].nazv << "\t Уд. вес: " << tbl[i].ves << "\n";
+		}
 
 	};
 
-	public int Main()
+	public int Task()
 	{
 			try
 			{
-				table tab("input.txt");
+				Table tab("input.txt");
 				tab.print();
 				tab.find();
 				return 0;
 			}
-			catch (System.IO.IOException e)
+			catch (IOException e)
 			{
 				Console.WriteLine("\n Введены неверные параметры, операция прервана");
 				if (e.Source != null)
@@ -100,6 +100,5 @@ namespace myHomework
 				throw;
 			}
 		}
-
 	}
 }

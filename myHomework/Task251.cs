@@ -11,13 +11,13 @@ namespace myHomework
 		const int n = 6;
 		const int m = 3;
 
-		private int t_count(int t, double a)
+		private static int t_count(int t, double a)
 		{
 			if (a == 0) t++;
 			return t;
 		}
 
-		public int Main()
+		public static int Task()
 		{
 			try
 			{

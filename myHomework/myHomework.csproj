@@ -53,6 +53,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramBase.cs" />
+    <Compile Include="ProgramBase1.cs" />
+    <Compile Include="ProgramBase1Base.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task251.cs" />
     <Compile Include="Task12.cs" />

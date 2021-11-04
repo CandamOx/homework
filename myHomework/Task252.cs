@@ -10,7 +10,7 @@ namespace myHomework
     {
 		const int n = 3;
 
-		private int Xj(double a1, double a2, double a3)
+		private static int Xj(double a1, double a2, double a3)
 		{
 			int x;
 			if (a1 < (a2 + a3) / 2.0)
@@ -24,7 +24,7 @@ namespace myHomework
 			return x;
 		}
 
-		public int Main()
+		public static int Task()
 		{
 			try
 			{

@@ -8,7 +8,7 @@ namespace myHomework
 {
     public class Task142
     {
-		public int Main()
+		public static int Task()
 		{
 			try
 			{
